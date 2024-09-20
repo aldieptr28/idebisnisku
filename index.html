@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <title>IdeBisnisku</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsive Meta Tag -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Halaman Login -->
+    <div id="login-page">
+        <h1>Selamat Datang Aldi</h1>
+        <div class="login-container">
+            <form id="login-form">
+                <input type="text" id="username" placeholder="Username" required>
+                <input type="password" id="password" placeholder="Kata Sandi" required>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Halaman Aplikasi Utama -->
+    <div id="app-page" style="display: none;">
+        <h1>Pengelola Ide Bisnis Unik</h1>
+        <div class="container">
+            <div class="top-bar">
+                <button id="logout-button">Logout</button>
+                <button id="export-button">Ekspor Data</button>
+                <input type="file" id="import-input" style="display: none;">
+                <button id="import-button">Impor Data</button>
+                <button id="theme-toggle">Ubah Tema</button>
+            </div>
+            <select id="category-filter">
+                <option value="">Semua Kategori</option>
+            </select>
+            <input type="text" id="search-input" placeholder="Cari ide...">
+            <form id="idea-form">
+                <input type="text" id="idea-title" placeholder="Judul Ide Bisnis..." required>
+                <textarea id="idea-description" placeholder="Deskripsi Ide..." required></textarea>
+                <textarea id="idea-strategy" placeholder="Strategi Ide..." required></textarea>
+                <input type="text" id="idea-category" placeholder="Kategori Ide..." required>
+                <input type="file" id="idea-image" accept="image/*">
+                <button type="submit">Tambah Ide</button>
+            </form>
+            <ul id="idea-list"></ul>
+        </div>
+
+        <!-- Modal untuk menambahkan tugas -->
+        <div id="task-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Tambah Tugas untuk "<span id="modal-idea-title"></span>"</h2>
+                <form id="task-form">
+                    <input type="text" id="task-input" placeholder="Nama Tugas..." required>
+                    <input type="date" id="task-deadline" required>
+                    <button type="submit">Tambah Tugas</button>
+                </form>
+                <ul id="task-list"></ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>Copyright aldi putra pratama</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

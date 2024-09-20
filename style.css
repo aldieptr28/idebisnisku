@@ -1,0 +1,441 @@
+/* Variabel Tema */
+:root {
+    --background-color: #e96443;
+    --text-color: #fff;
+    --container-background: rgba(255, 255, 255, 0.1);
+    --button-background: #fff;
+    --button-text-color: #e96443;
+    --input-background: #fff;
+    --input-text-color: #000;
+}
+
+/* Tema Terang */
+body.light-mode {
+    --background-color: #f0f0f0;
+    --text-color: #000;
+    --container-background: rgba(0, 0, 0, 0.1);
+    --button-background: #000;
+    --button-text-color: #fff;
+    --input-background: #fff;
+    --input-text-color: #000;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to right, var(--background-color), #904e95);
+    color: var(--text-color);
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    margin-top: 30px;
+    font-size: 2em;
+    animation: fadeInDown 1s;
+}
+
+.container {
+    margin: 20px auto;
+    width: 100%;
+    max-width: 800px;
+    background: var(--container-background);
+    padding: 15px;
+    border-radius: 10px;
+    animation: fadeInUp 1s;
+    box-sizing: border-box;
+}
+
+.top-bar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.top-bar button {
+    padding: 10px 20px;
+    border: none;
+    background: var(--button-background);
+    color: var(--button-text-color);
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.top-bar button:hover {
+    background: #f1f1f1;
+}
+
+#search-input,
+#category-filter {
+    width: 100%;
+    max-width: 600px;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    box-sizing: border-box;
+    background: var(--input-background);
+    color: var(--input-text-color);
+}
+
+#idea-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#idea-form input,
+#idea-form textarea {
+    width: 100%;
+    max-width: 600px;
+    padding: 10px;
+    margin: 5px 0;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    box-sizing: border-box;
+    background: var(--input-background);
+    color: var(--input-text-color);
+}
+
+#idea-form input[type="file"] {
+    padding: 3px;
+}
+
+#idea-form button {
+    padding: 10px 20px;
+    border: none;
+    background: var(--button-background);
+    color: var(--button-text-color);
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s;
+    margin-top: 10px;
+}
+
+#idea-form button:hover {
+    background: #f1f1f1;
+}
+
+#idea-list {
+    list-style: none;
+    padding: 0;
+}
+
+.idea-item {
+    background: var(--container-background);
+    margin: 20px 0;
+    padding: 15px;
+    border-radius: 5px;
+    position: relative;
+    animation: slideIn 0.5s;
+    text-align: left;
+}
+
+.idea-item h3 {
+    margin-top: 0;
+    font-size: 1.5em;
+}
+
+.idea-item p {
+    margin: 5px 0;
+}
+
+.idea-item img {
+    max-width: 100%;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.idea-item .progress-bar {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+.idea-item .progress {
+    height: 10px;
+    background-color: var(--button-background);
+    width: 0%;
+}
+
+.idea-item .buttons {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    display: flex;
+}
+
+.idea-item .buttons button {
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-size: 1.2em;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: color 0.3s;
+}
+
+.idea-item .buttons button:hover {
+    color: #ff5252;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+    background-color: #333;
+    margin: 10% auto;
+    padding: 20px;
+    border: none;
+    width: 90%;
+    max-width: 500px;
+    border-radius: 10px;
+    color: #fff;
+    animation: fadeInDown 0.5s;
+    box-sizing: border-box;
+}
+
+.modal-content h2 {
+    margin-top: 0;
+}
+
+.modal-content form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.modal-content form input[type="text"],
+.modal-content form input[type="date"] {
+    flex: 1 1 calc(50% - 10px);
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.modal-content form button {
+    padding: 10px 20px;
+    border: none;
+    background: var(--button-background);
+    color: var(--button-text-color);
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.modal-content form button:hover {
+    background: #f1f1f1;
+}
+
+.modal-content ul {
+    list-style: none;
+    padding: 0;
+}
+
+.modal-content ul li {
+    background: rgba(255, 255, 255, 0.2);
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.modal-content ul li input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.modal-content ul li span.deadline {
+    margin-left: auto;
+    font-size: 0.9em;
+}
+
+.close {
+    color: #fff;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #ff5252;
+}
+
+/* Halaman Login */
+#login-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    animation: fadeIn 1s;
+    padding: 20px;
+}
+
+.login-container {
+    background: var(--container-background);
+    padding: 40px 20px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 400px;
+}
+
+#login-form {
+    display: flex;
+    flex-direction: column;
+}
+
+#login-form input {
+    padding: 15px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    width: 100%;
+    box-sizing: border-box;
+    background: var(--input-background);
+    color: var(--input-text-color);
+}
+
+#login-form button {
+    padding: 15px;
+    border: none;
+    background: var(--button-background);
+    color: var(--button-text-color);
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s;
+    margin-top: 10px;
+    width: 100%;
+}
+
+#login-form button:hover {
+    background: #f1f1f1;
+}
+
+/* Animasi */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Responsif */
+@media screen and (max-width: 768px) {
+    h1 {
+        font-size: 1.8em;
+    }
+
+    .top-bar {
+        flex-direction: column;
+    }
+
+    .idea-item .buttons {
+        position: static;
+        margin-top: 10px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    h1 {
+        font-size: 1.5em;
+    }
+
+    .idea-item h3 {
+        font-size: 1.2em;
+    }
+
+    .modal-content {
+        margin-top: 20%;
+    }
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 10px;
+    background: var(--container-background);
+    color: var(--text-color);
+}
+
+footer p {
+    margin: 0;
+}
