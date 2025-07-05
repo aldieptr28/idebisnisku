@@ -27,7 +27,7 @@ document.getElementById('login-form').addEventListener('submit', (e) => {
     let username = document.getElementById('username').value.trim();
     let password = document.getElementById('password').value.trim();
 
-    if (username === 'admin' && password === 'altra2283') {
+    if (username === 'admin' && password === 'admin') {
         showPage('app');
         loadIdeas();
     } else {
